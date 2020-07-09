@@ -1,15 +1,13 @@
 package com.example.demo.app;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-/*
- * Add annotations here
- */
+
+@Controller
+@RequestMapping("/sample")
 public class SampleController {
 	
 // 	private final JdbcTemplate jdbcTemplate;
@@ -19,11 +17,9 @@ public class SampleController {
 // 		this.jdbcTemplate = jdbcTemplate;
 // 	}
 	
-	@GetMapping
+	@GetMapping("/test")
 	public String test(Model model) {
-		
-		//hands-on
-
+		model.addAttribute("title", "Inquery Form");
 		return "test";
 	}
 
