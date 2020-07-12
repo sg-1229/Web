@@ -6,10 +6,7 @@
 </head>
 <body>
 <h1 th:text="${title}" >title</h1>
-
-<!-- These are links to use for next lessons -->
-<!-- こちらは後で使用されるリンクです -->
-<p><a href="#" th:href="@{/inquiry}">Inquiry</a></p>
-<p><a href="#" th:href="@{/survey}">Survey</a></p>
+<p th:text="${name}">name</p>
+<p th:text="${email}">email</p>
 </body>
 </html>
