@@ -1,10 +1,19 @@
 package com.example.demo.app.Survey;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
+
 public class SurveyForm {
+	@Min(0)
+	@Max(150)
 	private int age;
 	
+	@Min(1)
+	@Max(5)
 	private int satisfaction;
-
+	
+	@Size(min = 1, max = 200, message = "Please input 200characters or less")
 	private String comment;
 	
 	
