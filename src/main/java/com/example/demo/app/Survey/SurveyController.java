@@ -1,5 +1,6 @@
 package com.example.demo.app.Survey;
 
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -40,9 +41,14 @@ public class SurveyController {
 	}
 	
 	@PostMapping("/complete")
-	public String Conplete(SurveyForm surveyForm,
+	public String Conplete(@Validated SurveyForm surveyForm,
+			BindingResult result,
 			Model model,
 			RedirectAttributes redirectAttributes) {
+		if(result.hasErrors()) {
+			model.addAttribute("title", "SurveyForm_Re");
+			return "survey/form";
+		}
 		redirectAttributes.addFlashAttribute("complete", "Thanks for your cooperation!");
 		return "redirect:/survey/form";		
 	}
