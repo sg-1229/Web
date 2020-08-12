@@ -2,16 +2,12 @@ package com.example.demo.repository;
 
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
-
-import com.example.demo.entity.Inquiry;
 import com.example.demo.entity.Survey;
 
-@Repository
 public interface SurveyDao {
-	
+	//一件のデータ挿入
 	void insertSurvey(Survey survey);
 	
-	List<Survey> getAll();
-	
+	//データテーブルの内容をすべて返す
+	List<Survey>  getAll();
 }
