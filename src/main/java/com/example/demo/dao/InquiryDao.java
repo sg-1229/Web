@@ -14,5 +14,6 @@ public interface InquiryDao {
 	//すべてのinquiryテーブルのデータをListとして返す
 	//java.utilのListを使う
 	List<Inquiry> getAll();
-
+	
+	int updateInquiry(Inquiry inquiry);
 }

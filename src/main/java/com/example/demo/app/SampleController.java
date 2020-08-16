@@ -25,7 +25,7 @@ public class SampleController {
 	@GetMapping("/test")
 	public String test(Model model) {
 		
-		String sql = "SELECT id, name, email " + "FROM inquiry WHERE id = 1";
+		String sql = "SELECT id, name, email FROM inquiry WHERE id = 1";
 		Map<String, Object> map = jdbcTemplate.queryForMap(sql);
 		
 		model.addAttribute("title", "Inquery Form");
